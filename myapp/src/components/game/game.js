@@ -19,17 +19,25 @@ class Game extends React.Component {
   }
 
   checkGuessed(currentGuess) {
-    this.state.guessed.forEach((guessed) => {
-      if(guessed === currentGuess) {
+    this.state.guessed;
+    this.state.guessed.forEach((guess) => {
+      console.log(guess)
+      if(guess === currentGuess) {
         console.log("Game Over")
       } else {
         console.log("You guessed correctly")
       }
     });
+    let newArray = this.state.guessed.slice();
+    newArray.push(currentGuess);
+    this.setState({guessed: newArray})
   }
 
 
-  shuffleBoard = () => {
+  shuffleBoard = (guess) => {
+
+    this.checkGuessed(guess); 
+
     const turn = this.state.turn + 1;
 
     for (let i=0;i<this.state.friends.length;i++) {
