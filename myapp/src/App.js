@@ -1,5 +1,5 @@
 import React from "react";
-import Game from "./components/game/game.js";
+import Game from "./components/game/";
 
 
 
