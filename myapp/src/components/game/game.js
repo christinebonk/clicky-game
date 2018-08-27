@@ -1,6 +1,6 @@
 import React from "react";
 import Square from "./square";
-import Board from "./board";
+import GameInfo from "./gameinfo";
 import friends from "../../friends.json";
 
 
@@ -28,17 +28,17 @@ class Game extends React.Component {
     });
   }
 
-  handleClick() {
-    const turn = this.state.turn + 1;
-  }
-
 
   shuffleBoard = () => {
+    const turn = this.state.turn + 1;
+
     for (let i=0;i<this.state.friends.length;i++) {
       const j = Math.floor(Math.random() * (i + 1));
       [this.state.friends[i], this.state.friends[j]] = [this.state.friends[j], this.state.friends[i]];
     }
-    this.setState({friends: friends})
+
+    this.setState({friends: friends,
+      turn: turn})
   }
 
 
@@ -57,6 +57,9 @@ class Game extends React.Component {
             />))}
         </div>
         <div className="game-info">
+          <GameInfo
+            turn = {this.state.turn} 
+          />
         </div>
       </div>
     );
