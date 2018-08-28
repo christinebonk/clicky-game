@@ -11,7 +11,8 @@ class Game extends React.Component {
       friends: friends,
       guessed: [],
       highScore: 0,
-      turn: 0
+      turn: 0,
+      message: "Click a square to start!"
           };
   }
 
@@ -23,12 +24,10 @@ class Game extends React.Component {
   }
 
   gameEnd() {
-    console.log("Game Over")
     if (this.state.turn > this.state.highScore) {
-      console.log("New High Score!")
-      this.setState({highScore: this.state.turn, turn: 0, friends: friends, guessed: []});
+      this.setState({highScore: this.state.turn, turn: 0, friends: friends, guessed: [], message: "You set a new high score!"});
     } else {
-      this.setState({turn: 0, friends: friends, guessed: []});
+      this.setState({turn: 0, friends: friends, guessed: [], message: "Game over!"});
     }
   }
 
@@ -42,14 +41,14 @@ class Game extends React.Component {
     return check
   }
 
-  checkGuessed = (currentGuess) => {
+  handleGuess = (currentGuess) => {
     let check = this.guessCheck(currentGuess);
     if (check) {
       this.shuffleBoard();
       let newArray = this.state.guessed.slice();
       newArray.push(currentGuess);      
       let turn = this.state.turn + 1;
-      this.setState({friends: friends, turn: turn, guessed: newArray})
+      this.setState({friends: friends, turn: turn, guessed: newArray, message: "Great guess!"})
     } else if (!check) {
       this.gameEnd();
     }    
@@ -59,21 +58,24 @@ class Game extends React.Component {
 
     return (
       <div className="game">
+      <div className="game-info">
+          <GameInfo
+            turn = {this.state.turn} 
+            highScore = {this.state.highScore}
+            message = {this.state.message}
+          />
+        </div>
         <div className="game-board">
           {this.state.friends.map(friend => (
             <Square
               image={friend.image}
               key={friend.id}
               id={friend.id}
-              checkGuessed = {this.checkGuessed}
+              name={friends.name}
+              handleGuess = {this.handleGuess}
             />))}
         </div>
-        <div className="game-info">
-          <GameInfo
-            turn = {this.state.turn} 
-            highScore = {this.state.highScore}
-          />
-        </div>
+        
       </div>
     );
   }

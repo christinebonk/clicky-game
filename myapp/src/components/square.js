@@ -1,15 +1,12 @@
 import React from "react";
-import friends from "../friends.json";
 
 function Square(props) {
   return (
-    <div onClick={() => props.checkGuessed(props.id)} className="square" 
-    // onClick={props.onClick}
+    <div onClick={() => props.handleGuess(props.id)} key={props.id} className="square" 
     >
-      <img  src={props.image} ></img>
+      <img  src={props.image} alt={props.name} ></img>
     </div>
   );
 }
 
-//input key value
 export default Square;
