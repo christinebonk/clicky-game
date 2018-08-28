@@ -1,7 +1,8 @@
 import React from "react";
-import Square from "./square";
-import GameInfo from "./gameinfo";
-import friends from "../friends.json";
+import Square from "../Square";
+import GameInfo from "../GameInfo";
+import friends from "../../friends.json";
+import "./game.css";
 
 
 class Game extends React.Component {

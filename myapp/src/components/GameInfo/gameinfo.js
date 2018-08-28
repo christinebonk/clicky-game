@@ -1,4 +1,5 @@
 import React from "react";
+import "./gameinfo.css";
 
 function GameInfo(props) {
   return (
