@@ -6,7 +6,8 @@ function GameInfo(props) {
     <div className="game-info" 
     // onClick={props.onClick}
     >
-      <h2>{props.turn}</h2>
+      <h2>Your Turn: {props.turn}</h2>
+      <h2>High Score: {props.highScore}</h2>
     </div>
   );
 }
