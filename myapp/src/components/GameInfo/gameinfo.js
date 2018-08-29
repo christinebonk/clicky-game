@@ -5,9 +5,15 @@ function GameInfo(props) {
   return (
     <div className="game-info" 
     >
-      <h2>Your Turn: {props.turn}</h2>
-      <div className="message">{props.message}</div>
-      <h2>High Score: {props.highScore}</h2>
+    	<div className="info-left">
+      		<h2>Your Turn: {props.turn}</h2>
+      	</div>
+     	 <div className="message">
+     	 	<h2>{props.message}</h2>
+     	 </div>
+     	 <div className="info-right">
+      		<h2>High Score: {props.highScore}</h2>
+      	</div>
     </div>
   );
 }

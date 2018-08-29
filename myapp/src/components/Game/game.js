@@ -59,13 +59,11 @@ class Game extends React.Component {
 
     return (
       <div className="game">
-      <div className="game-info">
           <GameInfo
             turn = {this.state.turn} 
             highScore = {this.state.highScore}
             message = {this.state.message}
           />
-        </div>
         <div className="game-board">
           {this.state.friends.map(friend => (
             <Square

@@ -1,0 +1,11 @@
+.game-info {
+	display: flex;
+}
+
+.game-info div {
+	width: 33.3333%;
+}
+
+h2 {
+	font-size: 30px;
+}
