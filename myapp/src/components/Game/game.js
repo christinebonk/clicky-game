@@ -64,17 +64,18 @@ class Game extends React.Component {
             highScore = {this.state.highScore}
             message = {this.state.message}
           />
-        <div className="game-board">
-          {this.state.friends.map(friend => (
-            <Square
-              image={friend.image}
-              key={friend.id}
-              id={friend.id}
-              name={friends.name}
-              handleGuess = {this.handleGuess}
-            />))}
+        <div className="game-container">
+          <div className="game-board">
+            {this.state.friends.map(friend => (
+              <Square
+                image={friend.image}
+                key={friend.id}
+                id={friend.id}
+                name={friends.name}
+                handleGuess = {this.handleGuess}
+              />))}
+          </div>
         </div>
-        
       </div>
     );
   }

@@ -1,3 +1,7 @@
-footer {
-	background: red;
+footer.page-footer {
+	background: #5474a8;
+}
+
+footer span {
+	padding-left: 10px;
 }

@@ -1,5 +1,33 @@
 .square {
 	width: 25%;
-	border: 2px solid black;
-	padding-top: 15%;
+	padding: 5px;
+}
+
+.square img {
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	box-shadow: #635f62 17px 10px 68px -28px;
+}
+
+.square:hover {
+	animation: squares 0.5s forwards;
+	cursor: pointer;
+}
+
+@keyframes squares {
+	from {transform: scale(1);}
+	to{transform: scale(1.1);}
+}
+
+@media only screen and (max-width: 1000px) {
+	.square {
+		width: 33.333%;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.square {
+		width: 50%;
+	}
 }

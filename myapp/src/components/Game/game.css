@@ -1,4 +1,26 @@
 .game-board {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
+	width: 50%;
+}
+
+.game-container {
+	display: flex;
+	justify-content: center;
+	padding: 50px 0px 50px;
+
+}
+
+
+@media only screen and (max-width: 1000px) {
+	.game-board {
+		width: 75%;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.game-board {
+		width: 90%;
+	}
 }

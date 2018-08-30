@@ -1,0 +1,11 @@
+h1 {
+	font-family: 'Playfair Display', serif;
+	font-weight: bold;
+	color: #635f62;
+	text-align: center;
+}
+
+html {
+	font-family: 'Roboto', sans-serif;
+	background: #f4ebe2
+}

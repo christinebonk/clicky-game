@@ -1,0 +1,10 @@
+h3 {
+	font-size: 20px;
+	text-align: center;
+	margin: 0;
+}
+
+header {
+	background: url("/images/leaves.png") fixed;
+	padding: 40px 0px 40px;
+}

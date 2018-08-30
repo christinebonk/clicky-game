@@ -9,7 +9,7 @@ function GameInfo(props) {
       		<h2>Your Turn: {props.turn}</h2>
       	</div>
      	 <div className="message">
-     	 	<h2>{props.message}</h2>
+     	 	<span><h2>{props.message}</h2></span>
      	 </div>
      	 <div className="info-right">
       		<h2>High Score: {props.highScore}</h2>
